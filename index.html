@@ -23,7 +23,7 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 <p class="last-updated"><strong>Last updated:</strong> June 26, 2026 &nbsp;·&nbsp; <strong>Effective:</strong> June 26, 2026</p>
 
 <div class="summary">
-<strong>Plain-English summary.</strong> MedCross is designed to be privacy-friendly. We do not operate a backend server — your game progress, coins, friends list, and library all stay on your device. We display ads through Google AdMob, offer optional sign-in via Apple, and process in-app purchases through Apple. We do not sell personal information. The sections below explain each data flow and your rights in detail.
+<strong>Plain-English summary.</strong> MedCross is designed to be privacy-friendly. We do not operate a backend server — your game progress, coins, friends list, library, and email-account credentials all stay on your device. We display ads through Google AdMob, offer optional sign-in via Apple or with an email + password (device-local), and process in-app purchases through Apple. We do not sell personal information. The sections below explain each data flow and your rights in detail.
 </div>
 
 <div class="toc">
@@ -69,9 +69,13 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
   <li>Profile display name, avatar selection, and nationality flag (if you choose to set one)</li>
 </ul>
 
-<h3>2.2 Information processed by Apple when you sign in</h3>
-<p>If you choose <strong>Sign In with Apple</strong>, the authentication is handled entirely by Apple. Depending on the selections you make in Apple's prompt, Apple may share with us your Apple user identifier and, optionally, your name and email address. Anything Apple shares with us is stored only on your device.</p>
-<p>You may also choose <strong>Continue as Guest</strong>, in which case no identifying information is associated with your data.</p>
+<h3>2.2 Sign-in options</h3>
+<p>MedCross offers three ways to use the app:</p>
+<ul>
+  <li><strong>Sign In with Apple.</strong> Authentication is handled entirely by Apple. Depending on the selections you make in Apple's prompt, Apple may share with us your Apple user identifier and, optionally, your name and email address. Anything Apple shares with us is stored only on your device.</li>
+  <li><strong>Email and password (device-local).</strong> You may create an email-based account. The email address and a cryptographically-hashed form of your password (PBKDF2-SHA256 with a unique salt and 10 000 iterations) are stored only on your device. The plaintext password is never stored, never transmitted, and never leaves your device. Because we do not operate a backend, an email account created on one device cannot be used to sign in on a different device, and we cannot reset a forgotten password — if you want cross-device access, use Sign In with Apple.</li>
+  <li><strong>Continue as Guest.</strong> No identifying information is associated with your data; a random local identifier is generated.</li>
+</ul>
 
 <h3>2.3 Information processed by advertising and purchase partners</h3>
 <p>When you view ads or make purchases inside the app, our third-party providers (Google AdMob and Apple) may collect information directly from your device under their own privacy policies. See <a href="#third">Section 4</a> for details on what each provider collects.</p>
@@ -196,7 +200,7 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
   <li>All data we control is stored in iOS application storage, which is sandboxed by iOS so other apps cannot read it.</li>
   <li>The app does not transmit data over plaintext HTTP. All network communications use TLS / HTTPS (App Transport Security is enforced).</li>
   <li>We do not operate a backend server, which eliminates entire categories of server-side risk (database breach, credential stuffing against our infrastructure, etc.).</li>
-  <li>We do not store passwords. Authentication is delegated entirely to Apple Sign In.</li>
+  <li>We do not store plaintext passwords. For Sign In with Apple, authentication is delegated entirely to Apple. For email accounts, the password is hashed on-device using PBKDF2-SHA256 with a unique 128-bit salt and 10 000 iterations before storage; only the hash and salt are persisted.</li>
   <li>We do not collect, store, or transmit payment information &mdash; all payments are handled by Apple.</li>
 </ul>
 <p>No security measure is perfect. If we become aware of a security incident affecting your personal information, we will notify you and the relevant authorities as required by applicable law (see <a href="#breach">Section 13</a>).</p>
