@@ -20,10 +20,10 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 <body>
 
 <h1>MedCross Privacy Policy</h1>
-<p class="last-updated"><strong>Last updated:</strong> July 11, 2026 &nbsp;·&nbsp; <strong>Effective:</strong> June 26, 2026</p>
+<p class="last-updated"><strong>Last updated:</strong> July 24, 2026 &nbsp;·&nbsp; <strong>Effective:</strong> June 26, 2026</p>
 
 <div class="summary">
-<strong>Plain-English summary.</strong> MedCross is designed to be privacy-friendly. We do not operate a backend server — your game progress, coins, friends list, library, and email-account credentials all stay on your device. We display ads through Google AdMob, offer optional sign-in via Apple or with an email + password (device-local), and process in-app purchases through Apple. We do not sell personal information. The sections below explain each data flow and your rights in detail.
+<strong>Plain-English summary.</strong> MedCross is designed to be privacy-friendly. We do not operate a backend server of our own — your game progress, coins, library, and email-account credentials all stay on your device. If you use the optional online Friends features, a small public game profile (your player code, chosen display name, avatar, level, and XP total) is stored in Apple's iCloud (CloudKit) so friends can find and rank you. We display ads through Google AdMob, offer optional sign-in via Apple or with an email + password (device-local), and process in-app purchases through Apple. We do not sell personal information. The sections below explain each data flow and your rights in detail.
 </div>
 
 <div class="toc">
@@ -84,6 +84,12 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 <h3>2.4 Diagnostic information</h3>
 <p>If the app crashes, the iOS operating system may collect crash diagnostics that Apple makes available to us in aggregated, non-identifying form via App Store Connect. We do not use any third-party crash-reporting or analytics SDK. No personal information is included in the crash diagnostics we receive from Apple.</p>
 
+<h3>2.5 Online friend features (Apple iCloud / CloudKit)</h3>
+<p>If you use the friend-request, gifting, league, or Friends Leaderboard features, the app stores a small game profile in the <strong>CloudKit public database operated by Apple</strong>: your player code, chosen display name, avatar selection, current level, and lifetime XP total, plus the friend requests, league invites, and battle-card gifts you send. This information is visible to other MedCross players &mdash; that is what lets friends verify, rank, and interact with you. It is linked to an anonymous CloudKit identifier that Apple assigns; <strong>we never receive your iCloud email address or Apple ID credentials</strong>. These features require being signed in to iCloud and are entirely optional: if you never share your player code or add a friend, no profile interaction with other players occurs.</p>
+
+<h3>2.6 Feedback you send us</h3>
+<p>If you use the in-app feedback / review form, the text you write (and the basic app-version context attached to it) is transmitted to us and stored in a private issue tracker (GitHub) so we can read and act on it. Please do not include personal or sensitive information in feedback.</p>
+
 <h2 id="use">3. How we use information</h2>
 <p>We use the limited information described above only for the following purposes:</p>
 <ul>
@@ -92,6 +98,7 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
   <li><strong>Notifications:</strong> scheduling local daily reminder notifications on your device if you opt in.</li>
   <li><strong>In-app purchases:</strong> recording, restoring, and validating purchases you make through Apple.</li>
   <li><strong>Advertising:</strong> displaying banner, interstitial, and rewarded ads through Google AdMob, which helps keep MedCross free. You control whether AdMob uses your device identifier for personalized ads through the iOS App Tracking Transparency prompt.</li>
+  <li><strong>Online friend features:</strong> relaying friend requests, league invites, and battle-card gifts between players, and publishing your game profile (player code, display name, avatar, level, XP) so friends can verify and rank you.</li>
   <li><strong>Safety and abuse prevention:</strong> enforcing your local blocklist for the Friends feature and responding to user reports.</li>
   <li><strong>Legal compliance:</strong> meeting our obligations under applicable law and responding to lawful requests.</li>
 </ul>
@@ -115,7 +122,16 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 </ul>
 <p>If you grant permission through the iOS App Tracking Transparency prompt, AdMob may use these identifiers to deliver personalized ads. If you deny permission, AdMob will deliver non-personalized ads. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from partner apps</a>.</p>
 
-<h3>4.4 Notifee (local notifications)</h3>
+<h3>4.4 Apple iCloud / CloudKit (online friend features)</h3>
+<p>The friend-request, gifting, league, and Friends Leaderboard features are hosted on Apple's CloudKit infrastructure (see <a href="#info">Section 2.5</a>). Apple processes this data under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>; we operate no server of our own.</p>
+
+<h3>4.5 Apple Game Center (live battles)</h3>
+<p>Optional live head-to-head Trivia battles are matched through Apple Game Center. If you play a live battle, your opponent sees your Game Center alias, and Apple processes matchmaking data under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. If Game Center is unavailable or you decline to sign in, battles run against a computer opponent instead and no matchmaking data is shared.</p>
+
+<h3>4.6 GitHub (feedback inbox)</h3>
+<p>In-app feedback you choose to send is stored in a private issue tracker hosted by GitHub (see <a href="#info">Section 2.6</a>), under <a href="https://docs.github.com/privacy">GitHub's Privacy Statement</a>.</p>
+
+<h3>4.7 Notifee (local notifications)</h3>
 <p>We use the Notifee library to schedule daily reminder notifications. These notifications are scheduled and delivered locally on your device. No notification tokens or device identifiers are transmitted to any server, and we do not use remote push notifications.</p>
 
 <h2 id="basis">5. Legal basis for processing (EEA / UK)</h2>
@@ -196,7 +212,7 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 <ul>
   <li>It remains on your device until you delete the app, sign out, delete your account in-app, or reset your data.</li>
   <li>iCloud or local device backups (if you have them enabled) may retain copies until those backups are deleted or expire.</li>
-  <li>You may permanently delete your account at any time via <strong>Profile &rarr; Settings &rarr; Delete Account</strong>. This clears all locally-stored MedCross data and revokes the Sign In with Apple authorization for MedCross.</li>
+  <li>You may permanently delete your account at any time via <strong>Profile &rarr; Settings &rarr; Delete Account</strong>. This clears all locally-stored MedCross data, deletes the CloudKit records the app created for you (your public game profile and any outstanding requests &mdash; see <a href="#info">Section 2.5</a>), and revokes the Sign In with Apple authorization for MedCross.</li>
 </ul>
 <p>Third-party providers (Apple, Google) retain transaction records and advertising data under their own retention policies.</p>
 
@@ -205,17 +221,18 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 <ul>
   <li>All data we control is stored in iOS application storage, which is sandboxed by iOS so other apps cannot read it.</li>
   <li>The app does not transmit data over plaintext HTTP. All network communications use TLS / HTTPS (App Transport Security is enforced).</li>
-  <li>We do not operate a backend server, which eliminates entire categories of server-side risk (database breach, credential stuffing against our infrastructure, etc.).</li>
+  <li>We do not operate a backend server of our own, which eliminates entire categories of server-side risk (database breach, credential stuffing against our infrastructure, etc.). The online friend features run on Apple's CloudKit infrastructure under Apple's security controls; CloudKit's permission model ensures only the account that created a record can modify it.</li>
   <li>We do not store plaintext passwords. For Sign In with Apple, authentication is delegated entirely to Apple. For email accounts, the password is hashed on-device using PBKDF2-SHA256 with a unique 128-bit salt and 10 000 iterations before storage; only the hash and salt are persisted.</li>
   <li>We do not collect, store, or transmit payment information &mdash; all payments are handled by Apple.</li>
 </ul>
 <p>No security measure is perfect. If we become aware of a security incident affecting your personal information, we will notify you and the relevant authorities as required by applicable law (see <a href="#breach">Section 14</a>).</p>
 
 <h2 id="transfers">13. International data transfers</h2>
-<p>We do not transfer your data internationally because we do not collect data on our own servers. However, our third-party providers may process your information in countries outside your country of residence:</p>
+<p>We do not operate servers of our own. However, our third-party providers may process your information in countries outside your country of residence:</p>
 <ul>
-  <li><strong>Apple</strong> processes Sign In with Apple and StoreKit transactions across its global infrastructure.</li>
+  <li><strong>Apple</strong> processes Sign In with Apple, StoreKit transactions, CloudKit friend-feature data, and Game Center matchmaking across its global infrastructure.</li>
   <li><strong>Google AdMob</strong> processes advertising data in the United States and other countries.</li>
+  <li><strong>GitHub</strong> stores in-app feedback in the United States and other countries.</li>
 </ul>
 <p>These providers maintain appropriate data-transfer safeguards (such as Standard Contractual Clauses) for transfers from the EEA, UK, and Switzerland.</p>
 
@@ -223,8 +240,9 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 <p>If we become aware of an unauthorized acquisition or disclosure of personal information that we control, we will notify affected users and the relevant supervisory authorities without undue delay, and within 72 hours where required by the GDPR (Article 33).</p>
 
 <h2 id="friends">15. Friends feature, reporting &amp; blocking</h2>
-<p>The Friends feature allows you to add other MedCross players to your friends list using a 6-digit player code that you must obtain from the other person directly. There is no in-app contact discovery, no address-book access, no search by name or email, and no chat or messaging.</p>
+<p>The Friends feature allows you to add other MedCross players to your friends list using a player code that you must obtain from the other person directly. There is no in-app contact discovery, no address-book access, no search by name or email, and no chat or messaging.</p>
 <p>Friend additions, including any nickname you choose for a friend, are stored only on your device. The other person does not see the nickname you have chosen for them.</p>
+<p>Friend requests, approvals, league invites, battle-card gifts, and the Friends Leaderboard are relayed through the CloudKit public database described in <a href="#info">Section 2.5</a>. What other players can see of you is limited to the game profile described there: your player code, chosen display name, avatar, level, and XP total. Display names are filtered for profanity when shown, and you can hide individual friends from your leaderboard at any time.</p>
 <p>If you encounter a player who you believe is engaging in abusive behavior, you can <strong>long-press the friend card</strong> in the Friends list to access two options:</p>
 <ul>
   <li><strong>Report this user:</strong> opens an email draft to <a href="mailto:yoavtoren@gmail.com">yoavtoren@gmail.com</a> pre-filled with the player's code so we can investigate.</li>
@@ -234,10 +252,10 @@ code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.92em}
 
 <h2 id="donot">16. Information we do NOT collect</h2>
 <ul>
-  <li>We do not operate a cloud backend or store your data on our servers.</li>
+  <li>We do not operate servers of our own or store your data on infrastructure we control (online friend data lives in Apple's CloudKit; feedback you send lives in a private GitHub issue tracker).</li>
   <li>We do not collect or transmit your real-world (precise) location.</li>
   <li>We do not access your contacts, photos, microphone, or camera.</li>
-  <li>We do not include in-app chat, direct messaging, or other user-generated content broadcasting.</li>
+  <li>We do not include in-app chat or direct messaging. The only user-generated content other players can see is your chosen display name and avatar (profanity-filtered on display, reportable and blockable).</li>
   <li>We do not sell personal information for monetary consideration.</li>
   <li>We do not use first-party analytics or third-party analytics SDKs (no Firebase Analytics, Mixpanel, Amplitude, Segment, etc.).</li>
   <li>We do not use third-party crash reporting SDKs (no Sentry, Bugsnag, Crashlytics, etc.).</li>
